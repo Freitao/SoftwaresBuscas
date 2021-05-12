@@ -1,0 +1,90 @@
+/*==========================================================================================|
+Desenvolva um programa, utilizando o laço FOR, que apresente na tela todos os números
+múltiplos de 3 e a soma desses números, em um intervalo de números informados pelo
+usuário.
+Regras.
+- 0 número inicial do intervalo tem que ser maior que zero.
+- O número final do intervalo não pode ser menor que o número inicial.
+
+*     Desenvolvido por: Felipe Freitas 12.06.2020                                         
+============================================================================================*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <conio.h>
+#include <windows.h>
+
+int main()
+
+{
+	int n_inicio, n_fim, loop,soma=0;
+
+	setlocale(LC_ALL, "Portuguese");
+
+		printf("\tNÚMEROS MÚLTIPLOS DE 3 ENTRE O INTERVALO DE NÚMEROS DESEJADO\n\n\n");
+		printf("\t\tPRIMEIRO NÚMERO: ");
+			scanf("%i",&n_inicio);	
+           		Sleep (300);
+          	printf("\t\t\t.");
+          	    Sleep (600);
+            printf(".");
+        		Sleep (800);
+            printf(".");
+			system ("cls");	
+			printf("\tNÚMEROS MÚLTIPLOS DE 3 ENTRE O INTERVALO DE NÚMEROS DESEJADO\n\n\n");
+	while (n_inicio <= 0){
+		printf("\t\t     !***!*ERRO*!***!\n");
+		printf("\a\t\tAPENAS NÚMEROS ACIMA DE 0!\n\n");
+		printf("\t\tPRIMEIRO NÚMERO: ");	
+			scanf("%i",&n_inicio);
+				Sleep (300);
+          	printf("\t\t\t.");
+          	    Sleep (600);
+            printf(".");
+        		Sleep (800);
+            printf(".");	
+			system ("cls");	
+			printf("\tNÚMEROS MÚLTIPLOS DE 3 ENTRE O INTERVALO DE NÚMEROS DESEJADO\n\n\n");
+}			
+		printf("\t\tPRIMEIRO NÚMERO: %i\n",n_inicio);
+		printf("\n\t\tÚLTIMO NÚMERO: ");
+			scanf("%i",&n_fim);
+			    Sleep (300);
+          	printf("\t\t\t.");
+          	    Sleep (600);
+            printf(".");
+        		Sleep (800);
+            printf(".");
+			system ("cls");
+			printf("\tNÚMEROS MÚLTIPLOS DE 3 ENTRE O INTERVALO DE NÚMEROS DESEJADO\n\n\n");		
+
+	while (n_fim < n_inicio){
+		printf("\t\t\t!***!*ERRO*!***!\n");
+		printf("\a\t\tO ÚLTIMO NÚMERO DEVE SER MAIOR QUE %i\n",n_inicio);
+		printf("\n\t\tPRIMEIRO NÚMERO: %i\n",n_inicio);
+		printf("\n\t\tÚLTIMO NÚMERO: ");	
+			scanf("%i",&n_fim);
+				Sleep (300);
+          	printf("\t\t\t.");
+          	    Sleep (600);
+            printf(".");
+        		Sleep (800);
+            printf(".");
+				Sleep(1000);
+			system ("cls");
+			printf("\tNÚMEROS MÚLTIPLOS DE 3 ENTRE O INTERVALO DE NÚMEROS DESEJADO\n\n\n");	
+}
+	printf("\n\t\tDE %i ATÉ %i OS NÚMEROS:\n\n\t", n_inicio, n_fim);		
+for (loop=n_inicio; loop<=n_fim; loop++){	
+	
+		if(loop %3 == 0){
+			printf("\t%i",loop);
+			soma = loop + soma;
+		}			
+}	
+	printf("\n\n\t\tSÃO NÚMEROS MÚLTIPLOS DE 3.\n\t");	
+	printf("\n\t\tE A SOMA DELES É:  %i",soma);
+	
+	getch ();
+	return 0;
+}
